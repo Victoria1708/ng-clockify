@@ -1,7 +1,6 @@
-<span>{{seconds}}</span>
-<button (click)="stop()">STOP</button>
-<button (click)="start()">START</button>
-<button (click)="pause()">PAUSE</button>
-<button (click)="unpause()">UNPAUSE</button>
-<button (click)="reset()">RESET</button>
+<span id="timer">{{time$ | async}}</span>
+<button class="start" *ngIf="!timerStarted" (click)="start()">START</button>
+<button class="stop" *ngIf="timerStarted" (click)="stop()">STOP</button>
+<button class="wait" (click)="wait()">WAIT</button>
+<button class="reset" (click)="reset()">RESET</button>
 
